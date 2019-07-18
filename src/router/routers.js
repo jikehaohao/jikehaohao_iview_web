@@ -51,6 +51,25 @@ export default [
     ]
   },
   {
+    path: '/video',
+    name: 'video',
+    component: Main,
+    meta: {
+      hideInBread: true
+    },
+    children: [
+      {
+        path: '动漫',
+        name: '动漫',
+        meta: {
+          icon: 'ios-home',
+          title: '免费动漫'
+        },
+        component: () => import('@/view/anime/video.vue')
+      }
+    ]
+  },
+  {
     path: '',
     name: 'doc',
     meta: {
