@@ -52,20 +52,30 @@ export default [
   },
   {
     path: '/video',
-    name: 'video',
-    component: Main,
+    name: '电影导航',
     meta: {
-      hideInBread: true
+      icon: 'logo-buffer',
+      title: '电影导航'
     },
+    component: Main,
     children: [
       {
-        path: '动漫',
+        path: 'anime',
         name: '动漫',
         meta: {
           icon: 'ios-home',
           title: '免费动漫'
         },
         component: () => import('@/view/anime/video.vue')
+      },
+      {
+        path: 'file',
+        name: '电影',
+        meta: {
+          icon: 'md-trending-up',
+          title: '电影'
+        },
+        component: () => import('@/view/components/count-to/count-to.vue')
       }
     ]
   },

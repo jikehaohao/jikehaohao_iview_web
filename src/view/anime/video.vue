@@ -1,30 +1,13 @@
 <template>
   <div>
     <Card>
-      <div class="drag-box-card">
-
-        <!-- 切记设置list1和list2属性时，一定要添加.sync修饰符 -->
-        <drag-list :list1.sync="list1" :list2.sync="list2" :dropConClass="dropConClass" @on-change="handleChange">
-          <h3 slot="left-title">待办事项</h3>
-          <Card class="drag-item" slot="left" slot-scope="left">{{ left.itemLeft.name }}</Card>
-          <h3 slot="right-title">完成事项</h3>
-          <Card class="drag-item" slot="right" slot-scope="right">{{ right.itemRight.name }}</Card>
-        </drag-list>
-
-      </div>
-      <div class="handle-log-box">
-        <h3>操作记录</h3>
-          <button>免费海贼王网站</button>
-        <div class="handle-inner-box">
-          <p v-for="(item, index) in handleList" :key="`handle_item_${index}`">{{ item }}</p>
-        </div>
-      </div>
-      <div class="res-show-box">
-        <pre>{{ list1 }}</pre>
-      </div>
-      <div class="res-show-box">
-        <pre>{{ list2 }}</pre>
-      </div>
+      <b>网页大全</b>
+      <Button type="info" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
+      <Button type="info" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
+      <Button type="primary" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
+      <Button type="warning" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
+      <Button type="dashed" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
+      <Button type="default" @click="freeWeb" style="border-top-left-radius: 10px;margin-left: 10px">免费海贼王网站</Button>
     </Card>
   </div>
 </template>
@@ -50,7 +33,12 @@ export default {
   methods: {
     handleChange ({ src, target, oldIndex, newIndex }) {
       this.handleList.push(`${src} => ${target}, ${oldIndex} => ${newIndex}`)
+    },
+
+    freeWeb () {
+      window.location.href = 'https://www.qsptv.com/play/38018-1-1.html'
     }
+
   },
   mounted () {
     getDragList().then(res => {
